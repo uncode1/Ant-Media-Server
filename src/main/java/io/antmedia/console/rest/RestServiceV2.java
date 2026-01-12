@@ -371,6 +371,15 @@ public class RestServiceV2 extends CommonRestService {
 	    return super.getApplicationInfo();
 	}
 
+	@Operation(summary = "Gets protocol statistics",
+	           responses = {@ApiResponse(responseCode = "200", description = "Successful operation")})
+	@GET
+	@Path("/protocol-stats")
+	@Produces(MediaType.APPLICATION_JSON)
+	public String getProtocolStats() {
+	    return super.getProtocolStats();
+	}
+
 	@Operation(summary = "Returns live streams in the specified application",
 	           responses = {@ApiResponse(responseCode = "200", description = "Successful operation")})
 	@GET

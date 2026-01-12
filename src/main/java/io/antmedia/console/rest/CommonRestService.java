@@ -795,6 +795,16 @@ public class CommonRestService {
 		return gson.toJson(info);
 	}
 
+	public String getProtocolStats() {
+		JsonObject jsonObject = new JsonObject();
+		// Placeholder for protocol stats: SRT, RIST, WebRTC, etc.
+		jsonObject.addProperty("srtStreams", 0);
+		jsonObject.addProperty("ristStreams", 0);
+		jsonObject.addProperty("webrtcStreams", getApplication().getTotalLiveStreamSize());
+		jsonObject.addProperty("rtmpStreams", 0);
+		return gson.toJson(jsonObject);
+	}
+
 	/**
 	 * Refactor remove this function and use ProxyServlet to get this info
 	 * Before deleting check web panel does not use it

@@ -637,6 +637,22 @@ public class AppSettingsUnitTest extends AbstractJUnit4SpringContextTests {
 		appSettings.setSrtReceiveLatencyInMs(200);
 		assertEquals(200, appSettings.getSrtReceiveLatencyInMs());
 
+		assertFalse(appSettings.isSrtEncryptionEnabled());
+		appSettings.setSrtEncryptionEnabled(true);
+		assertTrue(appSettings.isSrtEncryptionEnabled());
+
+		assertEquals("", appSettings.getSrtPassphrase());
+		appSettings.setSrtPassphrase("testpass");
+		assertEquals("testpass", appSettings.getSrtPassphrase());
+
+		assertFalse(appSettings.isSrtFecEnabled());
+		appSettings.setSrtFecEnabled(true);
+		assertTrue(appSettings.isSrtFecEnabled());
+
+		assertEquals("caller", appSettings.getSrtMode());
+		appSettings.setSrtMode("listener");
+		assertEquals("listener", appSettings.getSrtMode());
+
 		assertEquals(-1, appSettings.getWebhookStreamStatusUpdatePeriodMs());
 
 		assertEquals(150, appSettings.getEncodingQueueSize());
@@ -695,7 +711,7 @@ public class AppSettingsUnitTest extends AbstractJUnit4SpringContextTests {
 		//by also checking its default value. 
 
 		assertEquals("New field is added to settings. PAY ATTENTION: Please CHECK ITS DEFAULT VALUE and fix the number of fields.", 
-				204, numberOfFields);
+				208, numberOfFields);
 	}
 
 

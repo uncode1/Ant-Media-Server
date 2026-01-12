@@ -2471,6 +2471,30 @@ public class AppSettings implements Serializable{
 	private int srtReceiveLatencyInMs = 150;
 
 	/**
+	 * Enable SRT encryption
+	 */
+	@Value("${srtEncryptionEnabled:false}")
+	private boolean srtEncryptionEnabled = false;
+
+	/**
+	 * SRT passphrase for encryption
+	 */
+	@Value("${srtPassphrase:}")
+	private String srtPassphrase = "";
+
+	/**
+	 * Enable SRT Forward Error Correction
+	 */
+	@Value("${srtFecEnabled:false}")
+	private boolean srtFecEnabled = false;
+
+	/**
+	 * SRT mode: caller, listener, rendezvous
+	 */
+	@Value("${srtMode:caller}")
+	private String srtMode = "caller";
+
+	/**
 	 * The size of encoding queue to keep the frames waiting for encoding in Stream Adaptor
 	 * default: 150 (5 seconds frame for 30 fps stream)
 	 */
@@ -4188,6 +4212,38 @@ public class AppSettings implements Serializable{
 
 	public void setSrtReceiveLatencyInMs(int srtReceiveLatencyInMs) {
 		this.srtReceiveLatencyInMs = srtReceiveLatencyInMs;
+	}
+
+	public boolean isSrtEncryptionEnabled() {
+		return srtEncryptionEnabled;
+	}
+
+	public void setSrtEncryptionEnabled(boolean srtEncryptionEnabled) {
+		this.srtEncryptionEnabled = srtEncryptionEnabled;
+	}
+
+	public String getSrtPassphrase() {
+		return srtPassphrase;
+	}
+
+	public void setSrtPassphrase(String srtPassphrase) {
+		this.srtPassphrase = srtPassphrase;
+	}
+
+	public boolean isSrtFecEnabled() {
+		return srtFecEnabled;
+	}
+
+	public void setSrtFecEnabled(boolean srtFecEnabled) {
+		this.srtFecEnabled = srtFecEnabled;
+	}
+
+	public String getSrtMode() {
+		return srtMode;
+	}
+
+	public void setSrtMode(String srtMode) {
+		this.srtMode = srtMode;
 	}
 
 	public long getWebhookStreamStatusUpdatePeriodMs() {
