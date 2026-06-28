@@ -72,6 +72,8 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
         <tomcat.version>10.1.56</tomcat.version>
         <netty.version>4.1.135.Final</netty.version>
         <jackson-databind.version>2.18.8</jackson-databind.version>
+        <!-- Java 25 compatibility: Mockito 5.12.0 uses Byte Buddy which doesn't support Java 25 -->
+        <mockito-core.version>5.23.0</mockito-core.version>
 	    <sonar.exclusions>
 	        **/.github/**,
 	        **/*.yml,
@@ -208,7 +210,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
                 <artifactId>maven-surefire-plugin</artifactId>
                 <configuration>
                     <useSystemClassLoader>false</useSystemClassLoader>
-                    <argLine>@{argLine} -Xmx3000M -XX:+UseG1GC -XX:MaxGCPauseMillis=100 -Djava.library.path=${project.basedir}/src/main/server/lib/native-linux-x86_64</argLine>
+                    <argLine>@{argLine} -Xmx3000M -XX:+UseG1GC -XX:MaxGCPauseMillis=100 -Djava.library.path=${project.basedir}/src/main/server/lib/native-linux-x86_64 -Dnet.bytebuddy.experimental=true</argLine>
                 	<skipAfterFailureCount>10</skipAfterFailureCount>
                 </configuration>
             </plugin>
