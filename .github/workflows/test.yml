@@ -35,7 +35,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: 'adopt' #openjdk
-          java-version: '17'
+          java-version: '25'
           cache: 'maven'
         
       - name: Add MongoDB 6.0 GPG key and repository
@@ -100,7 +100,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: 'adopt' #openjdk
-          java-version: '17'
+          java-version: '25'
           cache: 'maven'
         
       - name: Build projects
@@ -137,7 +137,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: 'adopt' #openjdk
-          java-version: '17'
+          java-version: '25'
           cache: 'maven'
           
     
@@ -249,7 +249,7 @@ jobs:
         uses: actions/setup-java@v4
         with:
           distribution: 'adopt' #openjdk
-          java-version: '17'
+          java-version: '25'
           cache: 'maven'
           gpg-private-key: ${{ secrets.GPG_PRIVATE_KEY }}
           
