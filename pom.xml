@@ -68,6 +68,10 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
 		<enterprise.profile></enterprise.profile>
 		<argLine></argLine> <!-- Empty default value -->
         <java.version>25</java.version>
+        <!-- CVE fixes: override parent-managed versions to patched releases -->
+        <tomcat.version>10.1.56</tomcat.version>
+        <netty.version>4.1.135.Final</netty.version>
+        <jackson-databind.version>2.18.8</jackson-databind.version>
 	    <sonar.exclusions>
 	        **/.github/**,
 	        **/*.yml,
