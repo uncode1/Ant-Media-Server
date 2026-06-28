@@ -23,3 +23,34 @@ temp/
 .fleet
 /ffmpeg*.jar
 /bin
+# OS
+ehthumbs.db
+*.swp
+*.swo
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.pytest_cache/
+venv/
+env/
+ENV/
+pip-wheel-metadata/
+*.egg-info/
+*.egg
+# Node
+node_modules/
+# IDE
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+# Logs and temp
+*.log
+*.tmp
+*.bak
+*.cache
+*.aux
+*.out
+*.err
