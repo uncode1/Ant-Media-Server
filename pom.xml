@@ -67,6 +67,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
         <!-- keep it blank -->
 		<enterprise.profile></enterprise.profile>
 		<argLine></argLine> <!-- Empty default value -->
+        <java.version>25</java.version>
 	    <sonar.exclusions>
 	        **/.github/**,
 	        **/*.yml,
@@ -161,6 +162,14 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
                 <configuration>
 						<verbose>false</verbose>
 				</configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.13.0</version>
+                <configuration>
+                    <release>25</release>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.felix</groupId>
